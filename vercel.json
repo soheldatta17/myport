@@ -3,19 +3,12 @@
       {
         "src": "package.json",
         "use": "@now/node"
-      }
-    ],
-    "build": {
-      "commands": {
-        "build": "npm i --force && npm run build"
       },
-      "ignore": [
-        ".git",
-        "node_modules",
-        "README.md",
-        "package-lock.json",
-        "yarn.lock"
-      ]
-    }
+      {
+        "use": "@vercel/build-utils",
+        "src": "package.json",
+        "config": { "buildCommand": "npm i --force && npm run build" }
+      }
+    ]
   }
   
